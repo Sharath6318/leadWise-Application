@@ -1,0 +1,59 @@
+# api call for listing all leads
+####
+GET http://127.0.0.1:8000/leads/
+Accept: application/json
+Authorization: Token 22978589d143e0a9a9864039ac1e0b51c1853886
+
+###Api call for token
+POST http://127.0.0.1:8000/token/
+Content-Type: application/json
+
+{
+  "username" : "admin",
+  "password" : "admin"
+}
+
+# 22978589d143e0a9a9864039ac1e0b51c1853886"
+
+### APi call for create lead
+POST http://127.0.0.1:8000/leads/
+Content-Type: application/json
+
+{
+  "name": "Turbo Lab Solutions",
+  "email": "contact@turbolab.com",
+  "phone": "+91-9876543210",
+  "company": "TurboLab Pvt Ltd",
+  "source": "website",
+  "budget": 200000,
+  "requirement": "Looking for a full-stack developer to build a web-based resume analysis SaaS platform using Django and React. Should include authentication, file upload, and AI-based parsing."
+}
+
+### Api call for retrive lead
+GET http://127.0.0.1:8000/leads/1/
+Accept: application/json
+
+### Api call update lead
+PUT http://127.0.0.1:8000/leads/1/
+Content-Type: application/json
+
+{
+  "name": "Turbo Lab Solutions",
+  "email": "contact@turbolab.com",
+  "phone": "+91-9876543220",
+  "company": "TurboLab Pvt Ltd",
+  "source": "website",
+  "status": "new",
+  "budget": "200000",
+  "requirement": "Looking for a full-stack developer to build a web-based resume analysis SaaS platform using Django and React. Should include authentication, file upload, and AI-based parsing.",
+  "next_follow_up_date": null,
+  "notes": "make it better"
+}
+
+### Api call for delete lead
+DELETE http://127.0.0.1:8000/leads/1/
+
+
+### Api call for Summary
+GET http://127.0.0.1:8000/lead/summary/
+Accept: application/json
